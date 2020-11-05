@@ -1,5 +1,5 @@
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const pkg = require("./package.json");
 const path = require("path");
 const libraryName = pkg.name;
@@ -7,13 +7,18 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "myUnflappableComponent.js",
+    filename: "[name].[chunkhash].bundle.js",
     library: libraryName,
     libraryTarget: "umd",
     publicPath: "/dist/",
     umdNamedDefine: true,
   },
-  plugins: [],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].[chunkhash].min.css",
+      chunkFilename: "[id].[chunkhash].min.css",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -31,11 +36,18 @@ module.exports = {
         ],
       },
       {
-        test: /\.*css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"],
-        }),
+        test: /\.*css$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: (resourcePath, context) => {
+                return path.relative(path.dirname(resourcePath), context) + "/";
+              },
+            },
+          },
+          "css-loader",
+        ],
       },
       {
         test: /\.(js|jsx)$/,
@@ -53,6 +65,10 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [`...`, new CssMinimizerPlugin()],
+  },
+
   resolve: {
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),

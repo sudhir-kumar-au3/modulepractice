@@ -2,11 +2,11 @@
   "name": "@thesiriussud/modulepractice",
   "version": "1.1.0",
   "description": "practice react npm module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./webpack.config.js",
-    "prepublish": "npm run build"
+    "prepublish": "rd /s /q esm dist lib .cache>nul 2>&1|echo.>nul && npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,11 +30,15 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "css-minimizer-webpack-plugin": "^1.1.5",
     "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "mini-css-extract-plugin": "^1.2.1",
     "node-sass": "^5.0.0",
+    "postcss-loader": "^4.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass-loader": "^10.0.5",
