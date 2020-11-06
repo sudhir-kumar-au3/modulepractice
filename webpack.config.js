@@ -7,7 +7,7 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "[name].js",
+    filename: "index.js",
     library: libraryName,
     libraryTarget: "umd",
     publicPath: "/dist/",
@@ -15,8 +15,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].min.css",
-      chunkFilename: "[id].[contenthash].min.css",
+      filename: "[name].min.css",
+      chunkFilename: "[id].min.css",
     }),
   ],
   module: {
@@ -67,7 +67,6 @@ module.exports = {
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
-    runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
         vendor: {
