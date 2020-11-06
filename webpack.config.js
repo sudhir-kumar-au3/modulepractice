@@ -7,7 +7,7 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "[name].[chunkhash].bundle.js",
+    filename: "[name].[contenthash].js",
     library: libraryName,
     libraryTarget: "umd",
     publicPath: "/dist/",
@@ -15,8 +15,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[chunkhash].min.css",
-      chunkFilename: "[id].[chunkhash].min.css",
+      filename: "[name].[contenthash].min.css",
+      chunkFilename: "[id].[contenthash].min.css",
     }),
   ],
   module: {
@@ -67,6 +67,17 @@ module.exports = {
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
+    moduleIds: "deterministic",
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
   },
 
   resolve: {
@@ -74,6 +85,18 @@ module.exports = {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
       assets: path.resolve(__dirname, "assets"),
+      "@material-ui/core": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/core"
+      ),
+      "@material-ui/icons": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/icons"
+      ),
+      "@material-ui/styles": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/styles"
+      ),
     },
   },
   externals: {
@@ -89,6 +112,27 @@ module.exports = {
       commonjs2: "react-dom",
       amd: "ReactDOM",
       root: "ReactDOM",
+    },
+    "@material-ui/icons": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
+    },
+    "@material-ui/core": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
+    },
+    "@material-ui/styles": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
     },
   },
 };
