@@ -3,3 +3,4 @@ webpack.production.config.js
 .eslintrc
 .gitignore
 .babelrc
+src/

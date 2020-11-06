@@ -7,7 +7,7 @@ const FirstComponent = ({ name }) => {
     <React.Fragment>
       <div style={{ margin: "auto" }} className="main">
         {name}
-        <Typography variant="h1" align="center">
+        <Typography variant="h1" align="center" color="error">
           {name}
         </Typography>
       </div>

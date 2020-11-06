@@ -85,18 +85,18 @@ module.exports = {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
       assets: path.resolve(__dirname, "assets"),
-      "@material-ui/core": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/core"
-      ),
-      "@material-ui/icons": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/icons"
-      ),
-      "@material-ui/styles": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/styles"
-      ),
+      // "@material-ui/core": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/core"
+      // ),
+      // "@material-ui/icons": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/icons"
+      // ),
+      // "@material-ui/styles": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/styles"
+      // ),
     },
   },
   externals: {
@@ -113,26 +113,26 @@ module.exports = {
       amd: "ReactDOM",
       root: "ReactDOM",
     },
-    "@material-ui/icons": {
-      root: "MaterialUI",
-      commonjs2: "material-ui",
-      commonjs: "material-ui",
-      amd: "MaterialUI",
-      umd: "MaterialUI",
-    },
-    "@material-ui/core": {
-      root: "MaterialUI",
-      commonjs2: "material-ui",
-      commonjs: "material-ui",
-      amd: "MaterialUI",
-      umd: "MaterialUI",
-    },
-    "@material-ui/styles": {
-      root: "MaterialUI",
-      commonjs2: "material-ui",
-      commonjs: "material-ui",
-      amd: "MaterialUI",
-      umd: "MaterialUI",
-    },
+    // "@material-ui/icons": {
+    //   root: "MaterialUI",
+    //   commonjs2: "material-ui",
+    //   commonjs: "material-ui",
+    //   amd: "MaterialUI",
+    //   umd: "MaterialUI",
+    // },
+    // "@material-ui/core": {
+    //   root: "MaterialUI",
+    //   commonjs2: "material-ui",
+    //   commonjs: "material-ui",
+    //   amd: "MaterialUI",
+    //   umd: "MaterialUI",
+    // },
+    // "@material-ui/styles": {
+    //   root: "MaterialUI",
+    //   commonjs2: "material-ui",
+    //   commonjs: "material-ui",
+    //   amd: "MaterialUI",
+    //   umd: "MaterialUI",
+    // },
   },
 };
