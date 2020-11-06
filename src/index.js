@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Typography } from "@material-ui/core";
-const SecondComponent = React.lazy(() => import("./SecondComponent"));
+import SecondComponent from "./SecondComponent";
 const FirstComponent = ({ name }) => {
   return (
     <React.Fragment>
