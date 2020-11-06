@@ -2,7 +2,7 @@
   "name": "@thesiriussud/modulepractice",
   "version": "3.3.0",
   "description": "practice react npm module",
-  "main": "dist/main.[contenthash].js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./webpack.config.js",
