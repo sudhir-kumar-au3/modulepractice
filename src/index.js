@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import { Typography } from "@material-ui/core";
 import SecondComponent from "./SecondComponent";
-export const FirstComponent = ({ name }) => {
+const FirstComponent = ({ name }) => {
   return (
     <React.Fragment>
       <div style={{ margin: "auto" }} className="main">
@@ -10,8 +10,9 @@ export const FirstComponent = ({ name }) => {
         <Typography variant="h1" align="center" color="error">
           {name}
         </Typography>
+        <SecondComponent></SecondComponent>
       </div>
     </React.Fragment>
   );
 };
-export { SecondComponent };
+export default FirstComponent;
