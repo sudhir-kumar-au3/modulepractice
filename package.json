@@ -1,6 +1,6 @@
 {
   "name": "@thesiriussud/modulepractice",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "practice react npm module",
   "main": "dist/main.[contenthash].js",
   "scripts": {
