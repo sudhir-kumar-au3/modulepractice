@@ -7,8 +7,8 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "index.js",
-    chunkFilename: "[name].js",
+    filename: "[name].js",
+    chunkFilename: "[id].[chunkhash].js",
     library: libraryName,
     libraryTarget: "umd",
     publicPath: "/dist/",
@@ -68,23 +68,25 @@ module.exports = {
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
-    splitChunks: {
-      chunks: "all",
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
+    // splitChunks: {
+    //   chunks: "all",
+    //   maxInitialRequests: Infinity,
+    //   minSize: 0,
+    //   cacheGroups: {
+    //     default: false,
+    //     vendors: false,
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name(module) {
+    //         const packageName = module.context.match(
+    //           /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+    //         )[1];
 
-            return `npm.${packageName.replace("@", "")}`;
-          },
-        },
-      },
-    },
+    //         return `npm.${packageName.replace("@", "")}`;
+    //       },
+    //     },
+    //   },
+    // },
   },
 
   resolve: {
