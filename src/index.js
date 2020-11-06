@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import { Typography } from "@material-ui/core";
 import SecondComponent from "./SecondComponent";
-const FirstComponent = ({ name }) => {
+export const FirstComponent = ({ name }) => {
   return (
     <React.Fragment>
       <div style={{ margin: "auto" }} className="main">
@@ -14,4 +14,4 @@ const FirstComponent = ({ name }) => {
     </React.Fragment>
   );
 };
-export { FirstComponent, SecondComponent };
+export { SecondComponent };
