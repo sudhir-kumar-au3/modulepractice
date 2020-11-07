@@ -71,18 +71,18 @@ module.exports = {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
       assets: path.resolve(__dirname, "assets"),
-      "@material-ui/core": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/core"
-      ),
-      "@material-ui/icons": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/icons"
-      ),
-      "@material-ui/styles": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/styles"
-      ),
+      // "@material-ui/core": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/core"
+      // ),
+      // "@material-ui/icons": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/icons"
+      // ),
+      // "@material-ui/styles": path.resolve(
+      //   __dirname,
+      //   "./node_modules/@material-ui/styles"
+      // ),
     },
   },
   externals: {
