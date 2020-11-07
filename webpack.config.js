@@ -16,8 +16,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].min.css",
-      chunkFilename: "[id].min.css",
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
   ],
   module: {
@@ -66,29 +66,6 @@ module.exports = {
       },
     ],
   },
-  // optimization: {
-  //   minimizer: [`...`, new CssMinimizerPlugin()],
-  //   splitChunks: {
-  //     chunks: "all",
-  //     maxInitialRequests: Infinity,
-  //     minSize: 0,
-  //     cacheGroups: {
-  //       default: false,
-  //       vendors: false,
-  //       vendor: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         name(module) {
-  //           const packageName = module.context.match(
-  //             /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-  //           )[1];
-
-  //           return `npm.${packageName.replace("@", "")}`;
-  //         },
-  //       },
-  //     },
-  //   },
-  // },
-
   resolve: {
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),
