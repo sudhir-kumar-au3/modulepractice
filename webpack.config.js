@@ -66,46 +66,46 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    // minimizer: [`...`, new CssMinimizerPlugin()],
-    splitChunks: {
-      chunks: "all",
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name(module) {
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
+  // optimization: {
+  //   minimizer: [`...`, new CssMinimizerPlugin()],
+  //   splitChunks: {
+  //     chunks: "all",
+  //     maxInitialRequests: Infinity,
+  //     minSize: 0,
+  //     cacheGroups: {
+  //       default: false,
+  //       vendors: false,
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name(module) {
+  //           const packageName = module.context.match(
+  //             /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+  //           )[1];
 
-            return `npm.${packageName.replace("@", "")}`;
-          },
-        },
-      },
-    },
-  },
+  //           return `npm.${packageName.replace("@", "")}`;
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
 
   resolve: {
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
       assets: path.resolve(__dirname, "assets"),
-      // "@material-ui/core": path.resolve(
-      //   __dirname,
-      //   "./node_modules/@material-ui/core"
-      // ),
-      // "@material-ui/icons": path.resolve(
-      //   __dirname,
-      //   "./node_modules/@material-ui/icons"
-      // ),
-      // "@material-ui/styles": path.resolve(
-      //   __dirname,
-      //   "./node_modules/@material-ui/styles"
-      // ),
+      "@material-ui/core": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/core"
+      ),
+      "@material-ui/icons": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/icons"
+      ),
+      "@material-ui/styles": path.resolve(
+        __dirname,
+        "./node_modules/@material-ui/styles"
+      ),
     },
   },
   externals: {
@@ -122,26 +122,26 @@ module.exports = {
       amd: "ReactDOM",
       root: "ReactDOM",
     },
-    // "@material-ui/icons": {
-    //   root: "MaterialUI",
-    //   commonjs2: "material-ui",
-    //   commonjs: "material-ui",
-    //   amd: "MaterialUI",
-    //   umd: "MaterialUI",
-    // },
-    // "@material-ui/core": {
-    //   root: "MaterialUI",
-    //   commonjs2: "material-ui",
-    //   commonjs: "material-ui",
-    //   amd: "MaterialUI",
-    //   umd: "MaterialUI",
-    // },
-    // "@material-ui/styles": {
-    //   root: "MaterialUI",
-    //   commonjs2: "material-ui",
-    //   commonjs: "material-ui",
-    //   amd: "MaterialUI",
-    //   umd: "MaterialUI",
-    // },
+    "@material-ui/icons": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
+    },
+    "@material-ui/core": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
+    },
+    "@material-ui/styles": {
+      root: "MaterialUI",
+      commonjs2: "material-ui",
+      commonjs: "material-ui",
+      amd: "MaterialUI",
+      umd: "MaterialUI",
+    },
   },
 };
