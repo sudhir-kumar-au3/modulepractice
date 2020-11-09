@@ -1,7 +1,8 @@
+import { Paper } from "@material-ui/core";
 import React from "react";
 import "./seconcomponent.css";
-function SecondComponent() {
-  return <div className="hello">I am second component</div>;
+function SecondComponent({ title }) {
+  return <Paper className="hello">I am second component {title}</Paper>;
 }
 
 export default SecondComponent;

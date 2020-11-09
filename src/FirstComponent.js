@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Typography } from "@material-ui/core";
-import SecondComponent from "./SecondComponent";
+import AdbIcon from "@material-ui/icons/Adb";
 const FirstComponent = ({ name }) => {
   return (
     <React.Fragment>
@@ -10,7 +10,7 @@ const FirstComponent = ({ name }) => {
         <Typography variant="h1" align="center" color="error">
           {name}
         </Typography>
-        <SecondComponent></SecondComponent>
+        <AdbIcon></AdbIcon>
       </div>
     </React.Fragment>
   );
