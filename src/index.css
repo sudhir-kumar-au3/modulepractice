@@ -1,3 +1,5 @@
 .main {
-    color: red
+    background-color: greenyellow;
+    border: 10%;
+    padding: 20%;
 }
