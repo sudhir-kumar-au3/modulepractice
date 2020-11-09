@@ -85,40 +85,22 @@ module.exports = {
       ),
     },
   },
-  externals: {
-    // Don't bundle react or react-dom
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React",
+  externals: [
+    {
+      // Don't bundle react or react-dom
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+        amd: "React",
+        root: "React",
+      },
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        amd: "ReactDOM",
+        root: "ReactDOM",
+      },
     },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM",
-    },
-    "@material-ui/icons": {
-      commonjs2: /^\@material\-ui\/icons\/.*/,
-      commonjs: /^\@material\-ui\/icons\/.*/,
-      amd: /^\@material\-ui\/icons\/.*/,
-      umd: /^\@material\-ui\/icons\/.*/,
-      root: /^\@material\-ui\/icons\/.*/,
-    },
-    "@material-ui/core": {
-      commonjs2: /^\@material\-ui\/core\/.*/,
-      commonjs: /^\@material\-ui\/core\/.*/,
-      amd: /^\@material\-ui\/core\/.*/,
-      umd: /^\@material\-ui\/core\/.*/,
-      root: /^\@material\-ui\/core\/.*/,
-    },
-    "@material-ui/styles": {
-      commonjs2: /^\@material\-ui\/styles\/.*/,
-      commonjs: /^\@material\-ui\/styles\/.*/,
-      amd: /^\@material\-ui\/styles\/.*/,
-      umd: /^\@material\-ui\/styles\/.*/,
-      root: /^\@material\-ui\/styles\/.*/,
-    },
-  },
+    /@material-ui\/.*/,
+  ],
 };
