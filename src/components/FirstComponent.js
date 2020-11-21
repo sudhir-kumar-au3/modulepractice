@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Typography } from "@material-ui/core";
+import PropTypes from "prop-types";
 import AdbIcon from "@material-ui/icons/Adb";
 const FirstComponent = ({ name }) => {
   return (
@@ -14,5 +15,8 @@ const FirstComponent = ({ name }) => {
       </div>
     </React.Fragment>
   );
+};
+FirstComponent.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 export default FirstComponent;

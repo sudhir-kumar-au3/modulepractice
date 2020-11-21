@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const pkg = require("./package.json");
 const path = require("path");
 const libraryName = pkg.name;
@@ -71,14 +70,8 @@ module.exports = {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
       assets: path.resolve(__dirname, "assets"),
-      "@material-ui/core": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/core"
-      ),
-      "@material-ui/icons": path.resolve(
-        __dirname,
-        "./node_modules/@material-ui/icons"
-      ),
+      "@material-ui/core": path.resolve(__dirname, "./node_modules/@material-ui/core"),
+      "@material-ui/icons": path.resolve(__dirname, "./node_modules/@material-ui/icons"),
       "@material-ui/styles": path.resolve(
         __dirname,
         "./node_modules/@material-ui/styles"
@@ -101,6 +94,7 @@ module.exports = {
         root: "ReactDOM",
       },
     },
+    // excluding material ui from bundle
     /@material-ui\/.*/,
   ],
 };

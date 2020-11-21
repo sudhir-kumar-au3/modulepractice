@@ -3,4 +3,6 @@ webpack.production.config.js
 .eslintrc
 .gitignore
 .babelrc
+.eslintignore
+.prettierignore
 src/
